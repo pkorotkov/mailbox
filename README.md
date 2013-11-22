@@ -17,7 +17,7 @@ if err := mes.Attach("Agenda.txt"); err != nil {
 	log.Fatal(err)
 }
 
-if err := SendMessage(creds, mes); err != nil {
+if err := mailbox.SendMessage(creds, mes); err != nil {
 	log.Fatal(err)
 }
 ```
