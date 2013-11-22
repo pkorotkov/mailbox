@@ -1,4 +1,4 @@
-mailbox
+Mailbox
 =======
 
 Using mailbox library you can easily send full-fledged emails with little effort:
