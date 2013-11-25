@@ -80,8 +80,14 @@ func (m *Message) getToAddresses() []string {
 }
 
 func SendMessage(creds *Credentials, m *Message) error {
+	switch {
+	case creds == nil:
+		return fmt.Errorf("Message not sent: Input credentials must not be nil.")
+	case m == nil:
+		return fmt.Errorf("Message not sent: Input message must not be nil.")
+	}
+	
 	buf := new(bytes.Buffer)
-
 	buf.WriteString("From: " + m.from.String() + "\n")
 	buf.WriteString("To: " + m.to[0].String())
 	for i := 1; i < len(m.to); i++ {
