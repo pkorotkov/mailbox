@@ -24,7 +24,7 @@ func NewCredentials(serverAddress string) *Credentials {
 	return creds
 }
 
-func (creds *Credentials) SetPasswordAuth(login, password string) {
+func (creds *Credentials) SetPLAINAuth(login, password string) {
 	sa := strings.Split(creds.serverAddress, ":")
 	creds.auth = smtp.PlainAuth("", login, password, sa[0])
 }
