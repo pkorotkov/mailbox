@@ -5,7 +5,7 @@ Using mailbox library you can easily send full-fledged emails with little effort
 
 ```go
 creds := mailbox.NewCredentials("smtp.gmail.com:587")
-creds.SetPasswordAuth("my_login", "my_password")
+creds.SetPLAINAuth("my_login", "my_password")
 
 mes := new(mailbox.Message)
 mes.From("Pavel", "***@gmail.com").
