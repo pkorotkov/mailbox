@@ -51,6 +51,13 @@ func (m *Message) To(name, address string) *Message {
 	return m
 }
 
+func (m *Message) ToMany(addressees map[string]string) *Message {
+	for address, name := range addressees {
+		m.to = append(m.to, mail.Address{name, address})
+	}
+	return m
+}
+
 func (m *Message) Subject(subject string) *Message {
 	m.subject = subject
 	return m
